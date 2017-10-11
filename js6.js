@@ -14,25 +14,36 @@ promise=[];
 
 console.log('start 1');
 
-
-var dlina=1;
+var dlina=3;
 
 for (var i=0; i<=dlina; i++ ) {
     console.log(i);
 
-
-
-
-
-    if (i==0) {
-    console.log('i did')
-    promise[i] = new Promise(function(resolve, reject) {
-    this.daleytime(1,ntime,resolve);
+    var ttt=false;
+    promise = new Promise(function(resolve, reject) {
+        this.daleytime(i,ntime,resolve);
     });
-    }
-    console.log(i,promise[i],'before');
-    promise[i].then( data => {
-        console.log('end ',i,promise[i]);
+
+    promise.then( data => {
+        ttt=true;
+    });
+
+    while (!ttt) {
+        console.log('did')
+    };
+        console.log('end ', i);
+    console.log(promise);
+
+
+    //if (i==0) {
+    //console.log('i did')
+    //promise[i] = new Promise(function(resolve, reject) {
+    //this.daleytime(1,ntime,resolve);
+    //});
+    //}
+    //console.log(i,promise[i],'before');
+    //promise[i].then( data => {
+    //    console.log('end ',i,promise[i]);
 
 
 
@@ -42,7 +53,6 @@ for (var i=0; i<=dlina; i++ ) {
  //       });
 
 
-    });
     console.log(promise[i],'after');
 }
 
