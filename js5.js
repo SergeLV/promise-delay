@@ -15,24 +15,25 @@ promise=[];
 console.log('start 1');
 
 
-var dlina=1;
+var dlina=0;
 
-for (var i=0; i<=dlina; i++ ) {
-    console.log(i);
-
-
+for (var ii=0; ii<=dlina; ii++ ) {
+    console.log(ii);
 
 
 
-    if (i==0) {
+
+
+    if (ii==0) {
     console.log('i did')
-    promise[i] = new Promise(function(resolve, reject) {
+    promise[ii] = new Promise(function(resolve, reject) {
     this.daleytime(1,ntime,resolve);
     });
     }
-    console.log(i,promise[i],'before');
-    promise[i].then( data => {
-        console.log('end ',i,promise[i]);
+    console.log(ii,promise[ii],'before');
+    promise[ii].then( data => {
+        console.log(data);
+        console.log('end ',ii,promise[ii-1]);
 
 
 
@@ -43,7 +44,7 @@ for (var i=0; i<=dlina; i++ ) {
 
 
     });
-    console.log(promise[i],'after');
+    console.log(promise[ii],'after');
 }
 
 
